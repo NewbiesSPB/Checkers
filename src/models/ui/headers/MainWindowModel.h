@@ -6,7 +6,7 @@
 class IMainWindowView;
 class MainMenuModel;
 class SettingsModel;
-class StaticsModel;
+class StatisticsModel;
 class GameModel;
 
 class MainWindowModel
@@ -24,17 +24,17 @@ public:
 	int launch();
 
 private:
-	void createMainWindowView(int argc, char* argv[]);
+	void createView(int argc, char* argv[]);
 	void createMainMenuModel();
 	void createSettingsModel();
-	void createStaticsModel();
+	void createStatisticsModel();
 	void createGameModel();
 	IMainWindowView* getMainWindow() const;
 
 	std::unique_ptr<IMainWindowView> main_window_view_;
 	std::unique_ptr<MainMenuModel> main_menu_model_;
 	std::unique_ptr<SettingsModel> settings_model_;
-	std::unique_ptr<StaticsModel> statics_model_;
+	std::unique_ptr<StatisticsModel> statistics_model_;
 	std::unique_ptr<GameModel> game_model_;
 };
 

@@ -8,6 +8,8 @@ class MyButtonRound : public QPushButton
 	Q_OBJECT
 public:
 	explicit MyButtonRound(QObject* parent = nullptr);
+	virtual ~MyButtonRound();
+
 	void initStyleOption(QStyleOptionButton* style) const override;
 	void paintEvent(QPaintEvent* event) override;
 

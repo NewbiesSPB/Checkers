@@ -22,11 +22,12 @@ public:
 	virtual ~MainWindowView();
 
 	int launch() override;
+	void exit() override;
 	bool showMainMenu() override;
 	bool showSettings() override;
 	bool showStatistics() override;
 	bool showGame() override;
-	bool addWidget(WINDOW_NAME name, IView* view) override;
+	bool addWidget(WINDOW_TYPE name, IView* view) override;
 	IView* getView() override;
 
 private:
@@ -36,6 +37,6 @@ private:
 	MainWindowModel* model_;
 	QStackedWidget* widget_holder_;
 
-	std::map<WINDOW_NAME, QWidget*> widget_list_;
+	std::map<WINDOW_TYPE, QWidget*> widget_list_;
 };
 #endif	  // MainWindowView_H

@@ -7,7 +7,7 @@ set(SOURCES
     source/MainMenuModel.cpp
     source/GameModel.cpp
     source/SettingsModel.cpp
-    source/StaticsModel.cpp
+    source/StatisticsModel.cpp
 )
 
 set (HEADERS
@@ -15,7 +15,7 @@ set (HEADERS
     headers/MainMenuModel.h
     headers/GameModel.h
     headers/SettingsModel.h
-    headers/StaticsModel.h
+    headers/StatisticsModel.h
     headers/iuimodel.h
 )
 

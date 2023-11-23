@@ -1,9 +1,10 @@
 #include "MainMenuModel.h"
 #include "MainMenuView.h"
+#include "MainWindowModel.h"
 
 MainMenuModel::MainMenuModel(MainWindowModel *parent) : parent_(parent)
 {
-	view_ = std::make_unique<MainMenuView>(this);
+	createView();
 }
 
 MainMenuModel::~MainMenuModel()
@@ -15,16 +16,19 @@ IView *MainMenuModel::getView()
 	return view_->getView();
 }
 
-void MainMenuModel::createView()
+void MainMenuModel::clickedBack()
 {
+	parent_->exit();
 }
 
-void MainMenuModel::clickedExit()
+void MainMenuModel::createView()
 {
+	view_ = std::make_unique<MainMenuView>(this);
 }
 
 void MainMenuModel::clickedLaunchLanGame()
 {
+	parent_->launchLanGame();
 }
 
 void MainMenuModel::clickedLaunchAIGame()

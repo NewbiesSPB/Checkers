@@ -7,6 +7,8 @@ set(SOURCES
     source/MainMenuView.cpp
     source/MyButtonRect.cpp
     source/MyButtonRound.cpp
+    source/GameView.cpp
+    source/BoardView.cpp
 )
 
 set(HEADERS
@@ -14,6 +16,9 @@ set(HEADERS
     headers/MainMenuView.h
     headers/MyButtonRect.h
     headers/MyButtonRound.h
+    headers/GameView.h
+    headers/BoardView.h
+    ../interface/IView.h
 )
 
 set(PROJECT_SOURCES
@@ -21,7 +26,7 @@ set(PROJECT_SOURCES
     ${HEADERS}
 )
 
-add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCES} )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/headers)

@@ -5,7 +5,11 @@ MyButtonRect::MyButtonRect(QObject *parent)
 {
 	setMinimumSize(50, 50);
 	setMaximumSize(500, 500);
-	setSizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+	setSizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Fixed);
+}
+
+MyButtonRect::~MyButtonRect()
+{
 }
 
 void MyButtonRect::initStyleOption(QStyleOptionButton *style) const

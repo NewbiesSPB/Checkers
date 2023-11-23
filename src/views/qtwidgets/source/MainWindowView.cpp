@@ -28,9 +28,14 @@ int MainWindowView::launch()
 	return app_->exec();
 }
 
+void MainWindowView::exit()
+{
+	QCoreApplication::exit();
+}
+
 bool MainWindowView::showMainMenu()
 {
-	if (auto it = widget_list_.find(WINDOW_NAME::MAIN_MENU); it != widget_list_.end())
+	if (auto it = widget_list_.find(WINDOW_TYPE::MAIN_MENU); it != widget_list_.end())
 	{
 		widget_holder_->setCurrentWidget(it->second);
 		return true;
@@ -40,7 +45,7 @@ bool MainWindowView::showMainMenu()
 
 bool MainWindowView::showSettings()
 {
-	if (auto it = widget_list_.find(WINDOW_NAME::SETTINGS); it != widget_list_.end())
+	if (auto it = widget_list_.find(WINDOW_TYPE::SETTINGS); it != widget_list_.end())
 	{
 		widget_holder_->setCurrentWidget(it->second);
 		return true;
@@ -50,7 +55,7 @@ bool MainWindowView::showSettings()
 
 bool MainWindowView::showStatistics()
 {
-	if (auto it = widget_list_.find(WINDOW_NAME::STATICS); it != widget_list_.end())
+	if (auto it = widget_list_.find(WINDOW_TYPE::STATICS); it != widget_list_.end())
 	{
 		widget_holder_->setCurrentWidget(it->second);
 		return true;
@@ -60,7 +65,7 @@ bool MainWindowView::showStatistics()
 
 bool MainWindowView::showGame()
 {
-	if (auto it = widget_list_.find(WINDOW_NAME::GAME); it != widget_list_.end())
+	if (auto it = widget_list_.find(WINDOW_TYPE::GAME); it != widget_list_.end())
 	{
 		widget_holder_->setCurrentWidget(it->second);
 		return true;
@@ -68,13 +73,13 @@ bool MainWindowView::showGame()
 	return false;
 }
 
-bool MainWindowView::addWidget(WINDOW_NAME name, IView *view)
+bool MainWindowView::addWidget(WINDOW_TYPE name, IView *view)
 {
 	auto widget = dynamic_cast<QWidget *>(view);
 
 	if (!widget)
 	{
-		std::cerr << "Widget cast failed";
+		std::cerr << "Widget cast failed/n";
 		qDebug() << "Widget cast failed";
 		return false;
 	}

@@ -1,8 +1,8 @@
 #include "MainMenuView.h"
+#include "MainMenuModel.h"
 #include "MyButtonRect.h"
 #include "MyButtonRound.h"
 
-#include <QApplication>
 #include <QBoxLayout>
 
 MainMenuView::MainMenuView(MainMenuModel *model, QWidget *parent) : model_(model)
@@ -21,11 +21,12 @@ IView *MainMenuView::getView()
 
 void MainMenuView::clickedExit()
 {
-	QCoreApplication::exit();
+	model_->clickedBack();
 }
 
 void MainMenuView::clickedLaunchLanGame()
 {
+	model_->clickedLaunchLanGame();
 }
 
 void MainMenuView::clickedLaunchAIGame()
@@ -65,13 +66,18 @@ void MainMenuView::constructWindow()
 	QVBoxLayout *displayLayout = new QVBoxLayout(this);
 	displayLayout->setSizeConstraint(QLayout::SetNoConstraint);
 	displayLayout->setContentsMargins(0, 0, 0, 0);
+
 	displayLayout->addWidget(button_exit_);
 	displayLayout->addStretch(1);
+
 	displayLayout->addWidget(button_launchLanGame_);
 	displayLayout->addStretch(1);
+
 	displayLayout->addWidget(button_launchAIGame_);
 	displayLayout->addStretch(1);
+
 	displayLayout->addWidget(button_showSettings_);
 	displayLayout->addStretch(1);
+
 	displayLayout->addWidget(button_showStatistics_);
 }
