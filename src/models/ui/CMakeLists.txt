@@ -8,6 +8,7 @@ set(SOURCES
     source/GameModel.cpp
     source/SettingsModel.cpp
     source/StatisticsModel.cpp
+    source/BoardModel.cpp
 )
 
 set (HEADERS
@@ -17,6 +18,7 @@ set (HEADERS
     headers/SettingsModel.h
     headers/StatisticsModel.h
     headers/iuimodel.h
+    headers/BoardModel.h
 )
 
 set(PROJECT_SOURCES

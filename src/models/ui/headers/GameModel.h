@@ -6,6 +6,7 @@
 
 class MainWindowModel;
 class IGameView;
+class BoardModel;
 
 class GameModel : IUiModel
 {
@@ -18,8 +19,11 @@ public:
 
 private:
 	void createView();
+	void createBoardModel();
+
 	MainWindowModel* parent_;
 	std::unique_ptr<IGameView> view_;
+	std::unique_ptr<BoardModel> board_model_;
 };
 
 #endif	  // GameModel_H

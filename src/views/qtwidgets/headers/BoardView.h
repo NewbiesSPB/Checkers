@@ -10,6 +10,8 @@ public:
 	explicit BoardView(QObject *parent = nullptr);
 	virtual ~BoardView();
 
+	BoardView* getView();
+
 private:
 	void drawBackground(QPainter *painter, const QRectF &rect) override;
 

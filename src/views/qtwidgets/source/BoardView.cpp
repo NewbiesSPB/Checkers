@@ -10,6 +10,11 @@ BoardView::~BoardView()
 
 }
 
+BoardView* BoardView::getView()
+{
+	return this;
+}
+
 void BoardView::drawBackground(QPainter *painter, const QRectF &rect)
 {
 	painter->setRenderHint(QPainter::Antialiasing);

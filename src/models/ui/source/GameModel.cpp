@@ -1,6 +1,7 @@
 #include "GameModel.h"
 #include "GameView.h"
 #include "MainWindowModel.h"
+#include "BoardModel.h"
 
 GameModel::GameModel(MainWindowModel *parent) : parent_(parent)
 {
@@ -25,4 +26,9 @@ void GameModel::clickedBack()
 void GameModel::createView()
 {
 	view_ = std::make_unique<GameView>(this);
+}
+
+void GameModel::createBoardModel()
+{
+	board_model_ = std::make_unique<BoardModel>(this);
 }
